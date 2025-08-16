@@ -1,0 +1,17 @@
+.container-login{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 5%;
+    padding:20px 70px;
+    margin-top: -20px;
+}
+.login-img{
+    width: 96%;
+}
+.back-login{
+    height: 100vh;
+    padding: 1px;
+    background-image: url("../assets/user/internaute/back-login.PNG");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
