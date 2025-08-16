@@ -1,0 +1,178 @@
+CREATE TABLE `users` (
+  `id` int(10) NOT NULL,
+  `nom` varchar(20) NOT NULL,
+  `prenom` varchar(20) NOT NULL,
+  `email` varchar(20) NOT NULL,
+  `CIN` varchar(8) NOT NULL,
+  `numero_telephone` varchar(11) NOT NULL,
+  `photo` varchar(255),
+  `mot_de_passe` varchar(255) NOT NULL,
+);
+-------------------------------------------------------------------------------------------------------------------------
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`),
+  ADD UNIQUE KEY `users_cin_unique` (`CIN`),
+  ADD UNIQUE KEY `users_numero_telephone_unique` (`numero_telephone`);
+--------------------------------------------------------------------------------------------------------------------------
+INSERT INTO `users` (`id`, `nom`, `prenom`, `email`, `CIN`, `numero_telephone`, `photo`, `mot_de_passe`) VALUES
+(1, 'admin', 'admin', 'admin.admin@admin', '12345678', '23657412', 'admin.png', '$2y$10$/JG.TVzmbfPUlgZEPrwX2um5l1n61tbqD21poVkSGvogh1JBMGRoa'),
+(2, 'client', 'client', 'client.client@client', '23456789', '25657412', 'client.jpg', '$2y$10$1gZnTA1Cb2GE9HpHqWj8A.Exwd0dGKwzTUigxxJoPt2Gv3P9feKem'),
+(3, 'agent', 'agent', 'agent.agent@agent', '11345678', '27757412', 'agent.png', '$2y$10$B7yOvQvb4ysTkdf.Ad7HduG1ZWdcWq2ekchHEVvbBIQveJuUOY3Eu'),
+(4, 'Bouaziz', 'Mehdi', 'mehdi.bouaziz8hfg@mail.com', '99884933', '477884049', 'default.jpeg', '$2y$10$ZdRJXPstmZ8SqbSxKyxL6uZw3UDsaUuasC43xid5AgUTNHwh41bxy'),
+(5, 'Ben Azzouz', 'Imen', 'imen.benazzouziuky@yahoo.com', '89201934', '228834976', 'default.jpeg', '$2y$10$DN7FVWtX1UrG2RqLqluPt.Wzkpr2S1Xh.EoRO1VxhFnX9K5.rNumO'),
+(6, 'Gharsallah', 'Zeineb', 'zeineb.gharsallahpytz@mail.com', '57019718', '454309445', 'default.jpeg', '$2y$10$dJYLiDtEAdcuEF4kf7Ji9.0aa7Ls3T1319DtucprU1T1Mv5xXFcqa'),
+
+
+--------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+CREATE TABLE `clients` (
+  `id` int(10)  NOT NULL,
+  `user_id` int(10)  NOT NULL,
+  `type_client` enum('residentiel','industriel','commercial','secteur-public','agricole') NOT NULL,
+);
+--------------------------------------------------------------------------------------------------------------------------
+ALTER TABLE `clients`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `clients_user_id_unique` (`user_id`);
+ALTER TABLE `clients`
+  ADD CONSTRAINT `clients_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+  ON DELETE CASCADE ON UPDATE CASCADE;
+--------------------------------------------------------------------------------------------------------------------------
+INSERT INTO `clients` (`id`, `user_id`, `type_client`) VALUES
+(1, 2, 'residentiel'),
+(2, 14, 'agricole'),
+(3, 15, 'industriel'),
+(4, 16, 'secteur-public'),
+(5, 17, 'secteur-public'),
+(6, 18, 'residentiel');
+
+
+--------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
+
+
+CREATE TABLE `compteur_intelligents` (
+  `id` int(10) NOT NULL,
+  `logement_id` int(10) UNSIGNED NOT NULL,
+  `date_Installation` date NOT NULL,
+  `index_ancien_mois` int(11) NOT NULL,
+  `etat_panne` boolean NOT NULL,
+);
+--------------------------------------------------------------------------------------------------------------------------
+ALTER TABLE `compteur_intelligents`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `compteur_intelligents_logement_id_foreign` (`logement_id`);
+--------------------------------------------------------------------------------------------------------------------------
+INSERT INTO `compteur_intelligents` (`id`, `logement_id`, `date_Installation`, `index_ancien_mois`, `etat_panne`) VALUES
+    (1, 1, '2023-01-01', 9139, 0),
+    (2, 1, '2022-12-01', 8584, 0),
+    (3, 1, '2022-12-01', 8789, 0),
+    (4, 2, '2023-01-01', 8839, 1),
+    (5, 2, '2022-12-01', 9365, 0),
+    (6, 2, '2022-12-01', 8647, 0),
+    (7, 3, '2023-01-01', 8643, 0),
+    (8, 4, '2022-12-01', 9179, 0),
+    (9, 5, '2022-12-01', 8569, 0),
+    (10, 6, '2023-01-01', 9005, 1);
+
+
+
+
+
+
+
+
+
+CREATE TABLE `conso_tranches_jours` (
+  `id` int(10) NOT NULL,
+  `compteur_intelligent_id` int(10) NOT NULL,
+  `tarif_tranche_id` int(10) NOT NULL,
+  `date_consommation` date NOT NULL,
+  `index_recent_tranche` int(11) NOT NULL,
+);
+----------------------------------------------------------------------------------------------------------------------
+ALTER TABLE `conso_tranches_jours`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `conso_tranches_jours_compteur_intelligent_id_foreign` (`compteur_intelligent_id`),
+  ADD KEY `conso_tranches_jours_tarif_tranche_id_foreign` (`tarif_tranche_id`);
+ALTER TABLE `conso_tranches_jours`
+  ADD CONSTRAINT `conso_tranches_jours_compteur_intelligent_id_foreign` FOREIGN KEY (`compteur_intelligent_id`) REFERENCES `compteur_intelligents` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `conso_tranches_jours_tarif_tranche_id_foreign` FOREIGN KEY (`tarif_tranche_id`) REFERENCES `tarif_tranches` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+INSERT INTO `conso_tranches_jours` (`id`, `compteur_intelligent_id`, `tarif_tranche_id`, `date_consommation`, `index_recent_tranche`) VALUES
+(1, 1, 1, '2023-02-01', 0),
+(2, 1, 2, '2023-02-01', 110),
+(3, 1, 3, '2023-02-01', 177),
+(4, 1, 4, '2023-02-01', 288),
+(5, 1, 1, '2023-02-02', 320),
+(6, 1, 2, '2023-02-02', 401),
+(7, 1, 3, '2023-02-02', 500),
+(8, 1, 4, '2023-02-02', 570);
+
+
+
+CREATE TABLE `factures` (
+  `id` int(10) NOT NULL,
+  `compteur_intelligent_id` int(10) NOT NULL,
+  `montant_total_consommation` double(8,2) NOT NULL,
+  `montant_total_optimale` double(8,2) NOT NULL,
+  `mois_facturation` tinyint(3) NOT NULL,
+  `date_facture` date NOT NULL,
+  `statut_facturation` varchar(50)  NOT NULL
+  );
+-------------------------------------------------------------------------------------------------------------------
+ALTER TABLE `factures`
+  ADD CONSTRAINT `factures_compteur_intelligent_id_foreign` FOREIGN KEY (`compteur_intelligent_id`) REFERENCES `compteur_intelligents` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `factures`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `factures_compteur_intelligent_id_foreign` (`compteur_intelligent_id`);
+-------------------------------------------------------------------------------------------------------------------
+INSERT INTO `factures` (`id`, `compteur_intelligent_id`, `montant_total_consommation`, `montant_total_optimale`,
+`mois_facturation`, `date_facture`, `statut_facturation`) VALUES
+(1, 1, 4689.89, 3087.23, 11, '2023-04-17', 'en retard de paiement'),
+(2, 2, 4530.59, 3067.39, 2, '2023-04-03', 'Non payé'),
+(3, 3, 3581.78, 3848.53, 5, '2023-04-19', 'en retard de paiement'),
+(4, 4, 3423.63, 1045.45, 10, '2023-04-18', 'Payé'),
+(5, 5, 3727.21, 1025.99, 6, '2023-04-03', 'Payé'),
+(6, 6, 794.67, 2857.01, 9, '2023-04-30', 'Non payé'),
+(7, 7, 380.21, 2407.67, 11, '2023-04-11', 'en retard de paiement'),
+
+
+
+
+
+
+CREATE TABLE `pannes` (
+  `id` int(10)  NOT NULL,
+  `compteur_intelligent_id` int(10)  NOT NULL,
+  `agent_maintenance_id` int(10)  NOT NULL,
+  `type_panne` enum('materiels','logiciel','communication','configuration','alimentation éléctrique','sécurité',
+  'autre')  DEFAULT NULL,
+  `date_debut_panne` datetime NOT NULL,
+  `date_fin_panne` datetime NOT NULL,
+  `description_panne` text  NOT NULL,
+  `cout_panne` double(8,2) NOT NULL
+);
+-------------------------------------------------------------------------------------------------------------------
+ALTER TABLE `pannes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `pannes_compteur_intelligent_id_foreign` (`compteur_intelligent_id`),
+  ADD KEY `pannes_agent_maintenance_id_foreign` (`agent_maintenance_id`);
+ALTER TABLE `pannes`
+  ADD CONSTRAINT `pannes_agent_maintenance_id_foreign` FOREIGN KEY (`agent_maintenance_id`) REFERENCES `agent_maintenances` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pannes_compteur_intelligent_id_foreign` FOREIGN KEY (`compteur_intelligent_id`) REFERENCES `compteur_intelligents` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+--------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO `pannes` (`id`, `compteur_intelligent_id`, `agent_maintenance_id`, `type_panne`, `date_debut_panne`,
+`date_fin_panne`, `description_panne`, `cout_panne`) VALUES
+(1, 14, 3, 'autre', '2023-03-14 06:05:04', '2023-04-07 22:31:53', 'Ut facere sed a est magnam placeat nihil. Saepe itaque officiis incidunt molestias assumenda. Alias ut iure impedit ut alias consequatur. Aut doloremque a enim inventore nam.', 664.75),
+(2, 7, 4, 'configuration', '2023-03-03 02:08:20', '2023-03-12 15:43:07', 'Autem aut dolor delectus non voluptatem quo. Sit porro perspiciatis deserunt voluptatem culpa ut laborum. Qui libero labore qui quo itaque quia provident. Incidunt et odio sapiente.', 23.90),
+(3, 13, 3, 'autre', '2023-02-10 21:22:19', '2023-04-01 18:06:27', 'Ipsa error id qui sed. Voluptatum eius et ut voluptatum sit consequuntur dolor. Odit mollitia dolores quia.', 218.80),
+(4, 9, 2, 'configuration', '2022-12-29 08:52:05', '2023-02-10 10:19:11', 'Enim voluptatem enim magnam qui eos quis. Beatae ratione aspernatur amet et expedita qui sunt. Illo aut sapiente modi non. Aut vitae voluptas inventore itaque est at.', 428.35),
+(5, 7, 2, 'sécurité', '2023-02-27 23:00:15', '2023-03-01 16:58:52', 'Quas aut aspernatur ab ratione eveniet consequatur. Fuga ea sunt repudiandae quidem enim. Blanditiis ex tempora aspernatur corrupti sequi excepturi.', 754.65),
+(6, 14, 3, 'materiels', '2023-04-18 10:47:02', '2023-04-20 03:27:04', 'Aperiam consectetur sed laborum dignissimos. Fuga ratione similique dolores voluptatem nisi animi ad. Ducimus doloremque dolorem sed debitis molestias quo corporis. Ut sapiente eius molestiae voluptatem neque dolorem.', 133.95),
+(7, 11, 6, 'alimentation éléctrique', '2023-01-10 23:49:03', '2023-03-14 09:25:09', 'Sed quas et sequi illo non. Ducimus est quo sit beatae. Dolores magnam numquam ullam in et molestiae.', 933.36),
