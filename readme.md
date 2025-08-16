@@ -29,7 +29,7 @@ The application allows **clients**, **administrators**, and **maintenance agents
 The **homepage** is accessible to all users, even those without an account. It contains general information about the application and a **contact form** for users to submit inquiries.
 
 <p align="center">
-  <img src="screenshots/acceuil.PNG" alt="Homepage" width="45%" style="margin-right:10px;" />
+  <img src="screenshots/acceuil.PNG" alt="Homepage" width="50%" style="margin-right:10px;" />
   <img src="screenshots/contact.PNG" alt="Contact Form" width="45%" />
 </p>
 
@@ -50,8 +50,8 @@ After logging in, **administrators** access a navigation menu for managing vario
 
 *Admin Navigation Menu*  
 <p align="center">
-  <img src="screenshots/nav.PNG" alt="Admin Navigation" width="25%" style="margin-right:20px;" />
-  <img src="screenshots/profile.PNG" alt="Nav" width="20%" />
+  <img src="screenshots/nav.PNG" alt="Admin Navigation" width="15%" style="margin-right:20px;" />
+  <img src="screenshots/profile.PNG" alt="Nav" width="25%" />
 </p>
 
 Administrators can manage clients in the database: display, add, edit, and delete client records.
