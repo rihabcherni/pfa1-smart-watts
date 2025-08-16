@@ -14,15 +14,15 @@
 ## Authentication
 The application allows **clients**, **administrators**, and **maintenance agents** to securely log in.
 
-![Login Page](screenshots/login.PNG)
+![Login Page](screenshots/login.PNG)  
 *Page d'authentification*
 
 The **homepage** is accessible to all users, even those without an account. It contains general information about the application and a **contact form** for users to submit inquiries.
 
-![Homepage](screenshots/acceuil.PNG)
+![Homepage](screenshots/acceuil.PNG)  
 *Homepage*
 
-![Contact Form](screenshots/contact.PNG)
+![Contact Form](screenshots/contact.PNG)  
 *Contact Form*
 
 ---
@@ -30,7 +30,7 @@ The **homepage** is accessible to all users, even those without an account. It c
 ## Frontend Features
 Users can view their energy consumption and invoices, displayed in daily and monthly charts and statistics.
 
-![Client Dashboard](screenshots/dashclient.PNG)
+![Client Dashboard](screenshots/dashclient.PNG)  
 *Client Dashboard Interface*
 
 ---
@@ -38,25 +38,32 @@ Users can view their energy consumption and invoices, displayed in daily and mon
 ## Back-Office / Admin Panel
 After logging in, **administrators** access a navigation menu for managing various tasks.
 
-![Admin Navigation](screenshots/nav.PNG)
+![Admin Navigation](screenshots/nav.PNG)  
 *Admin Navigation Menu*
 
 Administrators can manage clients in the database: display, add, edit, and delete client records.
 
-![Client List](screenshots/listeclient.PNG)
+![Client List](screenshots/listeclient.PNG)  
 *Client Management Interface*
 
-![View Client](screenshots/affiche.PNG)
+![View Client](screenshots/affiche.PNG)  
 *View Client Details*
 
-![Add Client](screenshots/createclient.PNG)
+![Add Client](screenshots/createclient.PNG)  
 *Add New Client*
 
-![Edit Client](screenshots/update.PNG)
+![Edit Client](screenshots/update.PNG)  
 *Edit Client*
 
-![Delete Client](screenshots/delete.PNG)
+![Delete Client](screenshots/delete.PNG)  
 *Delete Client*
+
+---
+
+## 📺 Demo & Presentation
+
+- 📊 **Project Presentation (Visme):** [View here](https://my.visme.co/view/dm9kovyk-smart-grid)  
+- 🎥 **Web Application Demo Video:** [Watch here](https://drive.google.com/file/d/12rrVufd_LzU7gjTryhsnVHWxMKET02IC/view?usp=sharing)
 
 ---
 
