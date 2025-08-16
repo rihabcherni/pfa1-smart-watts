@@ -21,52 +21,71 @@
 ## Authentication
 The application allows **clients**, **administrators**, and **maintenance agents** to securely log in.
 
-![Login Page](screenshots/login.PNG)  
-*Page d'authentification*
+*Page d'authentification*  
+<p align="center">
+  <img src="screenshots/login.PNG" alt="Login Page" width="50%" />
+</p>
 
 The **homepage** is accessible to all users, even those without an account. It contains general information about the application and a **contact form** for users to submit inquiries.
 
-![Homepage](screenshots/acceuil.PNG)  
-*Homepage*
-
-![Contact Form](screenshots/contact.PNG)  
-*Contact Form*
+<p align="center">
+  <img src="screenshots/acceuil.PNG" alt="Homepage" width="45%" style="margin-right:10px;" />
+  <img src="screenshots/contact.PNG" alt="Contact Form" width="45%" />
+</p>
 
 ---
 
 ## Frontend Features
 Users can view their energy consumption and invoices, displayed in daily and monthly charts and statistics.
 
-![Client Dashboard](screenshots/Dashclient.PNG)  
-*Client Dashboard Interface*
+*Client Dashboard Interface*  
+<p align="center">
+  <img src="screenshots/Dashclient.PNG" alt="Client Dashboard" width="60%" />
+</p>
 
 ---
 
 ## Back-Office / Admin Panel
 After logging in, **administrators** access a navigation menu for managing various tasks.
 
-*Admin Navigation Menu*
+*Admin Navigation Menu*  
 <p align="center">
-  <img src="screenshots/nav.PNG" alt="Admin Navigation" width="45%" style="margin-right: 10px;" />
-  <img src="screenshots/profile.PNG" alt="Nav" width="45%" />
+  <img src="screenshots/nav.PNG" alt="Admin Navigation" width="25%" style="margin-right:20px;" />
+  <img src="screenshots/profile.PNG" alt="Nav" width="20%" />
 </p>
 
 Administrators can manage clients in the database: display, add, edit, and delete client records.
 
-*Client Management Interface*
-![Client List](screenshots/listeclient.PNG)  
+*Client Management Interface*  
+<p align="center">
+  <img src="screenshots/listeclient.PNG" alt="Client List" width="60%" />
+</p>
 
-![View Client](screenshots/affiche.PNG)  
-*View Client Details*
+*View Client Details*  
+<p align="center">
+  <img src="screenshots/affiche.PNG" alt="View Client" width="50%" />
+</p>
 
-![Add Client](screenshots/createclient.PNG)  
-*Add New Client*
+*Add New Client*  
+<p align="center">
+  <img src="screenshots/createclient.PNG" alt="Add Client" width="50%" />
+</p>
 
-![Edit Client](screenshots/update.PNG)  
-*Edit Client*
+*Edit Client*  
+<p align="center">
+  <img src="screenshots/update.PNG" alt="Edit Client" width="50%" />
+</p>
 
-![Delete Client](screenshots/delete.PNG)  
-*Delete Client*
+*Delete Client*  
+<p align="center">
+  <img src="screenshots/delete.PNG" alt="Delete Client" width="50%" />
+</p>
+
+---
+
+## Team
+- **Wiem Moussi**  
+- **Rihab Cherni**
 
 ---
 
