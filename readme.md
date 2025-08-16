@@ -9,12 +9,6 @@
 - 📊 **Project Presentation (Visme):** [View here](https://my.visme.co/view/dm9kovyk-smart-grid)  
 - 🎥 **Web Application Demo Video:** [Watch here](https://drive.google.com/file/d/12rrVufd_LzU7gjTryhsnVHWxMKET02IC/view?usp=sharing)
 
-hhh
-<video width="600" controls>
-  <source src="demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-ggggggggggg
 ---
 
 ## Technologies Used
