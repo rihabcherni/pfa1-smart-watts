@@ -1,0 +1,234 @@
+.container-stat{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding:2.5 2rem;
+    border-radius: 1rem;
+}
+.container-globale-stat{
+ display: grid;
+ grid-template-columns: repeat(5, 1fr); 
+ gap: 1%;
+ font-size: 1rem;
+}
+.card-icon {
+  font-size: 50px;
+}
+.card-globale-stat {
+  line-height: 1;
+  font-size: 1.2rem;
+  margin-right: 10px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 2px 10px 5px rgba(128, 128, 128, 0.12);
+}
+
+.globale-stat-container3 {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ grid-gap: 0.5rem;
+ border-radius: 1rem;
+}
+
+.globale-stat-container1 {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ grid-gap: 0.5rem;
+ border-radius: 1rem;
+}
+.container_taux{
+    display: grid;
+    grid-template-columns: 50% 45%;
+    gap: 5%;
+    padding:10px 20px !important;
+  }
+
+  @media screen and (max-width: 900px) {
+  
+    .container-globale-stat{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        font-size: 1rem;
+       }
+       
+  }
+
+  @media screen and (max-width:500px) {
+  
+    .container-globale-stat{
+        display: grid;
+        grid-template-columns:  1fr; 
+        font-size: 1rem;
+       }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) ;
+    grid-gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  
+  
+  .container1 {
+    /* padding:0 1rem; */
+    border-radius: 1rem;
+  }
+  
+  .container2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.5rem;
+    padding:0 1rem;
+    border-radius: 1rem;
+  }
+  
+  .container3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.5rem;
+    /* padding:0 1rem; */
+    border-radius: 1rem;
+  }
+  
+  .card-container4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.5rem;
+    padding:0 1rem;
+    border-radius: 1rem;
+  }
+  
+
+  .card-div{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.5rem;
+  }
+  .card-div4{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.5rem;
+  }
+  .card-icon {
+    font-size: 50px;
+  }
+  
+  
+  [class*="fa-"] {
+    font-size: 1rem;
+    filter: drop-shadow(0px 10px 15px rgba(55, 84, 170, 0.25));
+  }
+  
+  .number {
+    /* font-family: "Mitr", "Montserrat", "Segoe UI", Tahoma, Geneva, Verdana,
+      sans-serif; */
+    font-size: 1.5rem;
+  }
+    
+    .fa-quora {
+      color: #b92b27;
+    }
+    
+    .fa-facebook {
+      color: #3b5999;
+    }
+    
+    .fa-code {
+      color: #34465d;
+    }
+    
+    .fa-check {
+      color: #27ae60;
+    }
+    
+    @media screen and (max-width: 800px) {
+      .container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr) ;
+        grid-gap: 0.5rem;
+        padding: 0.5rem;
+        border-radius: 1rem;
+      }
+      .container2 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0.5rem;
+        padding:0 0.5rem;
+        border-radius: 1rem;
+      }
+      
+      .card-container4 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0.5rem;
+        padding:0 0.5rem;
+        border-radius: 1rem;
+      }
+      .card-div{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0.5rem;
+      }
+      .card-div4{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0.5rem;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      .container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr) ;
+        grid-gap: 0.5rem;
+        padding: 0.5rem;
+        border-radius: 1rem;
+      }
+      .container2 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0.5rem;
+        padding:0 0.5rem;
+        border-radius: 1rem;
+      }
+      
+      .card-container4 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0.5rem;
+        padding:0 0.5rem;
+        border-radius: 1rem;
+      }
+      .card-div{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0.5rem;
+      }
+      .card-div4{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0.5rem;
+      }
+    }

@@ -1,0 +1,27 @@
+.page-error{
+    background-color:#f9f9fb;
+    height : 100vh;
+}
+.image-error{
+    display:block;
+    width: 40%;
+    margin:0 auto ;
+}
+.messgae-error1{
+    font-size:40px;
+    color: #1976d2;
+}
+.container-error{
+    text-align:center;
+    margin-top: -3%;
+}
+@media (max-width: 1200px) {
+    .image-error {
+        width: 50%;   
+    }
+  }
+  @media (max-width: 800px) {
+    .image-error {
+        width: 60%;   
+    }
+  }
