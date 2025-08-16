@@ -4,6 +4,13 @@
 
 ---
 
+## Demo & Presentation
+
+- 📊 **Project Presentation (Visme):** [View here](https://my.visme.co/view/dm9kovyk-smart-grid)  
+- 🎥 **Web Application Demo Video:** [Watch here](https://drive.google.com/file/d/12rrVufd_LzU7gjTryhsnVHWxMKET02IC/view?usp=sharing)
+
+---
+
 ## Technologies Used
 - **Frontend:** React.js
 - **Backend:** Laravel (PHP)
@@ -30,7 +37,7 @@ The **homepage** is accessible to all users, even those without an account. It c
 ## Frontend Features
 Users can view their energy consumption and invoices, displayed in daily and monthly charts and statistics.
 
-![Client Dashboard](screenshots/dashclient.PNG)  
+![Client Dashboard](screenshots/Dashclient.PNG)  
 *Client Dashboard Interface*
 
 ---
@@ -38,13 +45,16 @@ Users can view their energy consumption and invoices, displayed in daily and mon
 ## Back-Office / Admin Panel
 After logging in, **administrators** access a navigation menu for managing various tasks.
 
-![Admin Navigation](screenshots/nav.PNG)  
 *Admin Navigation Menu*
+<p align="center">
+  <img src="screenshots/nav.PNG" alt="Admin Navigation" width="45%" style="margin-right: 10px;" />
+  <img src="screenshots/profile.PNG" alt="Nav" width="45%" />
+</p>
 
 Administrators can manage clients in the database: display, add, edit, and delete client records.
 
-![Client List](screenshots/listeclient.PNG)  
 *Client Management Interface*
+![Client List](screenshots/listeclient.PNG)  
 
 ![View Client](screenshots/affiche.PNG)  
 *View Client Details*
@@ -60,12 +70,5 @@ Administrators can manage clients in the database: display, add, edit, and delet
 
 ---
 
-## 📺 Demo & Presentation
-
-- 📊 **Project Presentation (Visme):** [View here](https://my.visme.co/view/dm9kovyk-smart-grid)  
-- 🎥 **Web Application Demo Video:** [Watch here](https://drive.google.com/file/d/12rrVufd_LzU7gjTryhsnVHWxMKET02IC/view?usp=sharing)
-
----
-
-## 🎯 Conclusion
+## Conclusion
 Smart Watts provides a comprehensive and user-friendly platform for **tracking, managing, and analyzing energy consumption**, supporting both end-users and administrative staff efficiently.
